@@ -1,0 +1,235 @@
+@font-face {
+    font-family: Montserrat;
+    src: url(./fonts/Montserrat-Regular.ttf);
+}
+
+@font-face {
+    font-family: Playfair;
+    src: url(./fonts/PlayfairDisplay-Regular.ttf);
+}
+
+body {
+    background: rgba(255, 255, 255, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 84%;
+    /* width is changed as per requirement*/
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 1.5rem 0 1.5rem;
+}
+
+.banner .text-wrapper {
+    max-width: 572px;
+}
+
+.banner h1 {
+    font-family: 'Playfair';
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 64px;
+    color: #000000;
+}
+
+.banner p {
+    font-family: 'Montserrat';
+    font-style: italic;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #4F4F4F;
+    padding: 5px 0 35px 0;
+}
+
+figure img {
+    width: 100%;
+}
+
+#main-section {
+    padding: 70px 0;
+}
+
+.recipe-ingredients {
+    width: 50%;
+}
+
+.recipe-name {
+    font-family: 'Playfair';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    color: #333333;
+}
+
+.recipe-ingredients .ingredient {
+    margin: 5px 0;
+}
+
+.recipe-ingredients .ingredient::before {
+    content: '';
+    width: 21px;
+    height: 21px;
+    border: 1px solid #828282;
+    border-radius: 4px;
+    display: inline-block;
+    transform: translateY(6px);
+}
+
+.recipe-ingredients h1 {
+    font-family: 'Playfair';
+    font-weight: 700;
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+.recipe-ingredients .recipe-name {
+    margin: 20px 0;
+}
+
+.recipe-ingredients label {
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 25px;
+    color: #333333;
+    margin-left: 10px;
+}
+
+.Instructions-wrapper {
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 16px;
+    color: #333333;
+}
+
+.Instructions-wrapper .list div {
+    padding: 20px 0;
+    line-height: 25px;
+}
+
+/* css for list numbers */
+/* First, set a counter using the counter-reset property. list-number is the variable name to use here. */
+div.list {
+    counter-reset: list-number;
+}
+
+
+
+/* Now each time a div.list div element appears, the list-number variable increases by one. */
+
+/* Finally, use the :before pseudo-element with the content property and counter() function to display the number. */
+div.list div:before {
+    /*counter-increment property to increase the value of the counter.*/
+    counter-increment: list-number;
+    content: counter(list-number);
+    background: #F2994A;
+    border-radius: 6px;
+    margin-right: 10px;
+    width: 35px;
+    height: 35px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 24px;
+    color: #FFFFFF;
+}
+
+
+
+/* right-sidebar */
+.right-sidebar {
+    width: 50%;
+}
+
+.cook-time-wrapper h6 {
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #BDBDBD;
+}
+
+.cook-time-wrapper {
+    float: right;
+    display: flex;
+    flex-direction: column;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 20px rgb(0 0 0 / 10%);
+    border-radius: 12px;
+    padding: 45px 60px;
+}
+
+.cook-time-wrapper div:nth-child(1) p,
+.cook-time-wrapper div:nth-child(1) span {
+    color: #F2994A;
+}
+
+.cook-time-wrapper span {
+    font-size: 25px;
+    margin-right: 12px;
+    color: #4F4F4F;
+}
+
+.cook-time-wrapper div {
+    margin: 10px 0;
+}
+
+.cook-time-wrapper>div div {
+    display: inline-block;
+}
+
+
+
+.cook-time-wrapper p {
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 14px;
+    color: #333333;
+}
+
+footer {
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-family: 'montserrat';
+    color: #828282;
+}
+
+@media only screen and (max-width:768px) {
+    #main-section {
+        flex-direction: column-reverse;
+    }
+
+    #main-section>.col {
+        width: 100%;
+    }
+
+    .cook-time-wrapper {
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 0px 20px;
+        float: unset;
+        justify-content: space-between;
+    }
+
+    .cook-time-wrapper div:nth-child(1) {
+        width: 100%;
+    }
+}
