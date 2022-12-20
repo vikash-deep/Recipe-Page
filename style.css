@@ -88,7 +88,7 @@ figure img {
     border: 1px solid #828282;
     border-radius: 4px;
     display: inline-block;
-    transform: translateY(6px);
+    vertical-align: bottom;
 }
 
 .recipe-ingredients h1 {
